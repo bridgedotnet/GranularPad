@@ -317,8 +317,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)BuildTasks\Granular.targets" />
-  <Import Project="GeneratedItems.targets" Condition="Exists('GeneratedItems.targets')" />
-  <Import Project="$(SolutionDir)BuildTasks\GeneratedItems.targets" />
   <Import Project="$(SolutionDir)packages\Bridge.Min.$(BridgeVersion)\build\Bridge.Min.targets" Condition="Exists('$(SolutionDir)packages\Bridge.Min.$(BridgeVersion)\build\Bridge.Min.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
