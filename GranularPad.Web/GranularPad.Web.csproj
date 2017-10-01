@@ -18,6 +18,7 @@
     <NoStdLib>true</NoStdLib>
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
     <AdditionalExplicitAssemblyReferences />
+    <BridgeVersion>16.3.2</BridgeVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,24 +44,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bridge">
-      <HintPath>$(SolutionDir)packages\Bridge.Core.15.7.0\lib\net40\Bridge.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Bridge.Core.$(BridgeVersion)\lib\net40\Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Bridge.Html5">
-      <HintPath>$(SolutionDir)packages\Bridge.Html5.15.7.0\lib\net40\Bridge.Html5.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Bridge.Html5.$(BridgeVersion)\lib\net40\Bridge.Html5.dll</HintPath>
     </Reference>
     <Reference Include="Bridge">
-      <HintPath>$(SolutionDir)packages\Bridge.Core.15.7.0\lib\net40\Bridge.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Bridge.Core.$(BridgeVersion)\lib\net40\Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Bridge.Html5">
-      <HintPath>$(SolutionDir)packages\Bridge.Html5.15.7.0\lib\net40\Bridge.Html5.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\Bridge.Html5.$(BridgeVersion)\lib\net40\Bridge.Html5.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="bridge.json" />
     <None Include="packages.config" />
-    <None Include="GranularPad.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\GranularPad\App.xaml.cs">
@@ -321,12 +319,12 @@
   <Import Project="$(SolutionDir)BuildTasks\Granular.targets" />
   <Import Project="GeneratedItems.targets" Condition="Exists('GeneratedItems.targets')" />
   <Import Project="$(SolutionDir)BuildTasks\GeneratedItems.targets" />
-  <Import Project="$(SolutionDir)packages\Bridge.Min.15.7.0\build\Bridge.Min.targets" Condition="Exists('$(SolutionDir)packages\Bridge.Min.15.7.0\build\Bridge.Min.targets')" />
+  <Import Project="$(SolutionDir)packages\Bridge.Min.$(BridgeVersion)\build\Bridge.Min.targets" Condition="Exists('$(SolutionDir)packages\Bridge.Min.$(BridgeVersion)\build\Bridge.Min.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)packages\Bridge.Min.15.7.0\build\Bridge.Min.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)packages\Bridge.Min.15.7.0\build\Bridge.Min.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)packages\Bridge.Min.$(BridgeVersion)\build\Bridge.Min.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)packages\Bridge.Min.$(BridgeVersion)\build\Bridge.Min.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
