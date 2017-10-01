@@ -13,6 +13,7 @@ namespace GranularPad.ViewModelBuilders
         {
             return new SnippetsGroupViewModel("Others", new[]
             {
+                new SnippetViewModel("Shapes", "pack://application:,,,/GranularPad;component/Snippets/Shapes.xaml"),
                 new SnippetViewModel("GradientBrush", "pack://application:,,,/GranularPad;component/Snippets/Media.GradientBrush.xaml"),
             });
         }

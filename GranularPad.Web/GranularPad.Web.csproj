@@ -282,6 +282,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\GranularPad\Snippets\Shapes.xaml">
+      <Link>Snippets\Shapes.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Page Include="..\GranularPad\Views\MainView.xaml">
       <Link>Views\MainView.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
